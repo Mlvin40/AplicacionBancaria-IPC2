@@ -14,10 +14,7 @@ public class AplicacionBancaria {
     public static void main(String[] args) {
 
         System.out.println("Hello World!");
-<<<<<<< HEAD
         ConexionMySQL conexionMySQL = new ConexionMySQL();
-=======
 
->>>>>>> interfaz
     }
 }
