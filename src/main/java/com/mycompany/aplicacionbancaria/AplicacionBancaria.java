@@ -29,7 +29,7 @@ public class AplicacionBancaria {
 //        Estado estado = Estado.PENDIENTE;
 
         Solicitud solicitud = new Solicitud(
-                "12", // numeroSolicitud
+                "1221233", // numeroSolicitud
                 "15/07/2024", // fecha
                 TipoTarjeta.NACIONAL, // tipo
                 "José Moisés Granados", // nombreSolicitante
