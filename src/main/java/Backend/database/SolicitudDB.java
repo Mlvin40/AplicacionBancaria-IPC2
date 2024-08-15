@@ -1,5 +1,6 @@
 package Backend.database;
 
+import Backend.Tarjeta;
 import Backend.solicitudes.Solicitud;
 
 import java.sql.Connection;
@@ -27,6 +28,17 @@ public class SolicitudDB {
             Statement statementInsert = connection.createStatement();
             int rowsAffected = statementInsert.executeUpdate(insert);
             System.out.println("Rows affected> " + rowsAffected);
+
+            //agregar la tarjeta a la tabla tarjetas
+            Tarjeta tarjeta = new Tarjeta(
+                    solicitud.getTipo(),
+                    solicitud.getNombreSolicitante(),
+                    solicitud.getDireccion(),
+                    solicitud.getFecha(),
+                    solicitud.getNumeroSolicitud()
+            );
+            TarjetaDB tarjetaDB = new TarjetaDB();
+            tarjetaDB.agregarTarjeta(tarjeta);
 
         } catch (SQLException e) {
             System.out.println("Error al insertar en la base de datos");

@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="221177f8-20c6-4f62-b9e2-1f1122d3df0d" name="Changes" comment="" />
+    <list default="true" id="221177f8-20c6-4f62-b9e2-1f1122d3df0d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AplicacionBancaria.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Tarjeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Tarjeta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/database/SolicitudDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/database/SolicitudDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/aplicacionbancaria/AplicacionBancaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/aplicacionbancaria/AplicacionBancaria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Backend/Tarjeta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Backend/Tarjeta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/aplicacionbancaria/AplicacionBancaria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/aplicacionbancaria/AplicacionBancaria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +48,7 @@
   "keyToString": {
     "Application.AplicacionBancaria.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "tarjetas",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/melvin/Escritorio/Prueba de Repo/IPC2-2024/jdbc-java-2024-ipc2",
     "node.js.detected.package.eslint": "true",
@@ -43,6 +56,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
@@ -88,6 +104,8 @@
       <workItem from="1723616225048" duration="1157000" />
       <workItem from="1723617931070" duration="6919000" />
       <workItem from="1723701998444" duration="4199000" />
+      <workItem from="1723710827349" duration="2196000" />
+      <workItem from="1723713534037" duration="751000" />
     </task>
     <servers />
   </component>
