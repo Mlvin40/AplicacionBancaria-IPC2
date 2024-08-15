@@ -5,22 +5,21 @@ import Backend.enums.TipoTarjeta;
 
 public class Solicitud {
 
-        private String numeroSolicitud; // para buscar una solicitud en el sistema
-        private String fecha;
-        private TipoTarjeta tipo; //NACIONAL, REGIONAL, INTERNACIONAL
-        private String nombreSolicitante;
-        private double salario;
-        private String direccion;
-        private Estado estado; //enum PENDIENTE, AUTORIZADA, RECHAZADA
+    private String numeroSolicitud; // para buscar una solicitud en el sistema
+    private String fecha;
+    private TipoTarjeta tipo; //NACIONAL, REGIONAL, INTERNACIONAL
+    private String nombreSolicitante;
+    private double salario;
+    private String direccion;
+    //private Estado estado; //enum PENDIENTE, AUTORIZADA, RECHAZADA
 
-    public Solicitud(String numeroSolicitud, String fecha, TipoTarjeta tipo, String nombreSolicitante, double salario, String direccion, Estado estado) { //constructor
+    public Solicitud(String numeroSolicitud, String fecha, TipoTarjeta tipo, String nombreSolicitante, double salario, String direccion) { //constructor
         this.numeroSolicitud = numeroSolicitud;
         this.fecha = fecha;
         this.tipo = tipo;
         this.nombreSolicitante = nombreSolicitante;
         this.salario = salario;
         this.direccion = direccion;
-        this.estado = estado;
     }
 
     public String getNumeroSolicitud() {
@@ -71,11 +70,4 @@ public class Solicitud {
         this.direccion = direccion;
     }
 
-    public Estado getEstado() {
-        return estado;
-    }
-
-    public void setEstado(Estado estado) {
-        this.estado = estado;
-    }
 }

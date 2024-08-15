@@ -19,9 +19,9 @@ public class SolicitudDB {
     }
 
     public void crearSolicitud(Solicitud solicitud) {
-        String insert = "INSERT INTO solicitudes (numero_solicitud, fecha, tipo_tarjeta, nombre_solicitante, salario, direccion, estado) VALUES " +
+        String insert = "INSERT INTO solicitudes (numero_solicitud, fecha, tipo_tarjeta, nombre_solicitante, salario, direccion) VALUES " +
                 "('" + solicitud.getNumeroSolicitud() + "', '" + formatoFecha(solicitud.getFecha()) + "', '" + solicitud.getTipo() + "', '" + solicitud.getNombreSolicitante() + "', " +
-                solicitud.getSalario() + ", '" + solicitud.getDireccion() + "', '" + solicitud.getEstado() + "')";
+                solicitud.getSalario() + ", '" + solicitud.getDireccion() + "')";
 
         try {
             Statement statementInsert = connection.createStatement();
