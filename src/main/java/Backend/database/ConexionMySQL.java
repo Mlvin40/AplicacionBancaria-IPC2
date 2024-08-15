@@ -21,15 +21,28 @@ public class ConexionMySQL {
     private static final String USER = "root";
     private static final String PASSWORD = "123";
 
-    private Connection connection;
+    private static Connection connection;
 
-    public ConexionMySQL() {
+//    public ConexionMySQL() {
+//        try {
+//            connection = DriverManager.getConnection(URL_MYSQL, USER, PASSWORD);
+//            System.out.println("Conexión exitosa");
+//            System.out.println("Esquema: " + connection.getSchema());
+//        } catch (SQLException ex) {
+//            System.out.println("Error al conectar con la base de datos");
+//            ex.printStackTrace();
+//        }
+//    }
+
+    public static Connection conectar()  throws SQLException {
         try {
             connection = DriverManager.getConnection(URL_MYSQL, USER, PASSWORD);
+            System.out.println("Conexión exitosa");
             System.out.println("Esquema: " + connection.getSchema());
+            return connection;
         } catch (SQLException ex) {
-            System.out.println("Error al conectar con la base de datos");
             ex.printStackTrace();
+            throw new SQLException("Error al conectar con la base de datos", ex);
         }
     }
 }
