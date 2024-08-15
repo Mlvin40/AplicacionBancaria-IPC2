@@ -20,7 +20,7 @@ public class AplicacionBancaria {
         ConexionMySQL conexionMySQL = new ConexionMySQL();
 
         //Pruebas de la base de datos
-        Solicitud solicitud = new Solicitud("41",
+        Solicitud solicitud = new Solicitud("2",
                 "15/07/2024",
                 TipoTarjeta.NACIONAL,
                 "José Moisés Granados",
