@@ -1,11 +1,9 @@
 package Backend.database;
 
-import Backend.Tarjeta;
+import Backend.tarjetas.Tarjeta;
 import Backend.solicitudes.Solicitud;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class SolicitudDB {
 
@@ -29,19 +27,103 @@ public class SolicitudDB {
             int rowsAffected = statementInsert.executeUpdate(insert);
             System.out.println("Rows affected> " + rowsAffected);
 
-            //agregar la tarjeta a la tabla tarjetas
-            Tarjeta tarjeta = new Tarjeta(
-                    solicitud.getTipo(),
-                    solicitud.getNombreSolicitante(),
-                    solicitud.getDireccion(),
-                    solicitud.getFecha(),
-                    solicitud.getNumeroSolicitud()
-            );
-            TarjetaDB tarjetaDB = new TarjetaDB();
-            tarjetaDB.agregarTarjeta(tarjeta);
-
         } catch (SQLException e) {
             System.out.println("Error al insertar en la base de datos");
+        }
+    }
+
+    private void rechazarSolictud(String numeroSolicitud) {
+        String update = "UPDATE solicitudes SET estado = 'RECHAZADA' WHERE numero_solicitud = ?";
+        try {
+            PreparedStatement statementUpdate = connection.prepareStatement(update);
+            statementUpdate.setString(1, numeroSolicitud);
+            int rowsAffected = statementUpdate.executeUpdate();
+            System.out.println("Rows affected> " + rowsAffected);
+            System.out.println("Solicitud rechazada");
+        } catch (SQLException e) {
+            System.out.println("Error al rechazar la solicitud: " + e.getMessage());
+        }
+    }
+
+    public boolean aprobarSolicitud(String numeroSolicitud) {
+
+        if (!autorizarSolicitud(numeroSolicitud)) {
+            rechazarSolictud(numeroSolicitud);
+            return false;
+        }
+
+        // Consulta para verificar si la solicitud existe y está pendiente
+        String consulta = "SELECT COUNT(*) FROM solicitudes WHERE numero_solicitud = ? AND estado = 'PENDIENTE'";
+        try {
+
+            // Preparar la consulta
+            PreparedStatement statementConsulta = connection.prepareStatement(consulta);
+            statementConsulta.setString(1, numeroSolicitud);
+            ResultSet resultSet = statementConsulta.executeQuery();
+
+            // Verificar si la solicitud existe
+            if (resultSet.next() && resultSet.getInt(1) > 0) {
+                // Si existe, actualizar el estado a AUTORIZADA
+                String update = "UPDATE solicitudes SET estado = 'AUTORIZADA' WHERE numero_solicitud = ?";
+                PreparedStatement statementUpdate = connection.prepareStatement(update);
+                statementUpdate.setString(1, numeroSolicitud);
+                int rowsAffected = statementUpdate.executeUpdate();
+
+                System.out.println("Rows affected> " + rowsAffected);
+                System.out.println("Solicitud aprobada");
+                return true;
+            } else {
+                // Si no existe, retornar false
+                System.out.println("La solicitud no existe o no está pendiente");
+                return false;
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al actualizar la solicitud: " + e.getMessage());
+            return false;
+        }
+    }
+
+    // Metodo para ver si se cumple con el minimo de salario y autorizar la solicitud
+    // Metodo de la clase SolicitudDB
+    private boolean autorizarSolicitud(String numeroSolicitud) {
+        String query = "SELECT salario, tipo_tarjeta FROM solicitudes WHERE numero_solicitud = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, numeroSolicitud);
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                double salario = resultSet.getDouble("salario");
+                String tipoTarjeta = resultSet.getString("tipo_tarjeta");
+
+                double porcentajeSalario = salario * 0.60;
+                double limiteCredito;
+                switch (tipoTarjeta) {
+                    case "NACIONAL":
+                        limiteCredito = 5000;
+                        break;
+                    case "REGIONAL":
+                        limiteCredito = 10000;
+                        break;
+                    case "INTERNACIONAL":
+                        limiteCredito = 20000;
+                        break;
+                    default:
+                        throw new IllegalArgumentException("Tipo de tarjeta no válido");
+                }
+                if (porcentajeSalario >= limiteCredito) {
+                    //Como cumple con el minimo de salario, se autoriza la solicitud
+                    return true;
+                } else {
+                    System.out.println("El 60% del salario no supera el límite de crédito del tipo de tarjeta.");
+                    return false;
+                }
+            } else {
+                System.out.println("Solicitud no encontrada.");
+                return false;
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al autorizar la solicitud: " + e.getMessage());
+            return false;
         }
     }
 
