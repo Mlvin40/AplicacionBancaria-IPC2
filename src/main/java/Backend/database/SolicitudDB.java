@@ -11,7 +11,7 @@ public class SolicitudDB {
 
     Connection connection;
 
-    public SolicitudDB( ) {
+    public SolicitudDB() {
         try {
             this.connection = ConexionMySQL.conectar();
         } catch (SQLException e) {
