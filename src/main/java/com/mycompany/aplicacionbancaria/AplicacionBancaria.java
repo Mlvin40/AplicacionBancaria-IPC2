@@ -32,11 +32,14 @@ public class AplicacionBancaria {
         SolicitudDB solicitudDB = new SolicitudDB();
         solicitudDB.crearSolicitud(solicitud);
 
+        TarjetaDB tarjetaDB = new TarjetaDB();
 
         if (solicitudDB.aprobarSolicitud(numeroSolicitud)) {
-            TarjetaDB tarjetaDB = new TarjetaDB();
+
             Tarjeta tarjeta = tarjetaDB.obtenerDatosDesdeSolicitud(numeroSolicitud);
             tarjetaDB.crearTarjeta(tarjeta);
         }
+
+        tarjetaDB.cancelarTarjeta("4256 3102 6563 3525");
     }
 }

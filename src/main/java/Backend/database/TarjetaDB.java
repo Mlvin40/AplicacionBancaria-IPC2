@@ -21,6 +21,35 @@ public class TarjetaDB {
         }
     }
 
+    //Para la funionalidad de consultar la tarjeta
+    public String consultarTarjeta(String tarjeta) {
+
+        StringBuilder sb = new StringBuilder();
+        String consulta = "SELECT * FROM tarjetas WHERE numero_tarjeta = ?";
+        try {
+            PreparedStatement statementConsulta = connection.prepareStatement(consulta);
+            statementConsulta.setString(1, tarjeta);
+            ResultSet resultSet = statementConsulta.executeQuery();
+            if (resultSet.next()) {
+
+                sb.append("Datos de la tarjeta: \n");
+                sb.append("Número de tarjeta: ").append(resultSet.getString("numero_tarjeta")).append("\n");
+                sb.append("Tipo de tarjeta: ").append(resultSet.getString("tipo")).append("\n");
+                sb.append("Límite: ").append(resultSet.getDouble("limite")).append("\n");
+                sb.append("Nombre del titular: ").append(resultSet.getString("nombre")).append("\n");
+                sb.append("Dirección: ").append(resultSet.getString("direccion")).append("\n");
+                sb.append("Estado de tarjeta: ").append(resultSet.getString("estado")).append("\n");
+
+            } else {
+                return "Tarjeta no encontrada";
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al consultar la tarjeta: " + e.getMessage());
+        }
+
+        return sb.toString();
+    }
+
     // Agregar tarjeta a la base de datos
     public void crearTarjeta(Tarjeta tarjeta) {
 
@@ -73,12 +102,39 @@ public class TarjetaDB {
         }
     }
 
+    public void cancelarTarjeta(String numeroTarjeta) {
+        // Consulta para verificar si la tarjeta existe y su estado actual
+        String consulta = "SELECT estado FROM tarjetas WHERE numero_tarjeta = ?";
+        String update = "UPDATE tarjetas SET estado = 'CANCELADO' WHERE numero_tarjeta = ?";
 
-//    private String formatoFecha(String fecha) {
-//        fecha = fecha.trim();
-//        String[] fechaArray = fecha.split("/");
-//        String fechaFormateada = fechaArray[2] + "-" + fechaArray[1] + "-" + fechaArray[0];
-//        return fechaFormateada;
-//    }
+        try {
+            // Preparar la consulta para verificar el estado de la tarjeta
+            PreparedStatement statementConsulta = connection.prepareStatement(consulta);
+            statementConsulta.setString(1, numeroTarjeta);
+            ResultSet resultSet = statementConsulta.executeQuery();
 
+            if (resultSet.next()) {
+                String estadoActual = resultSet.getString("estado");
+
+                if ("CANCELADO".equals(estadoActual)) {
+                    System.out.println("La tarjeta ya está cancelada.");
+                    return;
+                }
+
+                // Preparar la actualización si el estado no es 'CANCELADO'
+                PreparedStatement statementUpdate = connection.prepareStatement(update);
+                statementUpdate.setString(1, numeroTarjeta);
+                int rowsAffected = statementUpdate.executeUpdate();
+
+                if (rowsAffected > 0) {
+                    System.out.println("Tarjeta cancelada exitosamente.");
+                }
+            } else {
+                // Si no se encuentra la tarjeta
+                System.out.println("Tarjeta no encontrada.");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al cancelar la tarjeta: ");
+        }
+    }
 }
