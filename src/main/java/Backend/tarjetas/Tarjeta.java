@@ -4,6 +4,7 @@
  */
 package Backend.tarjetas;
 
+import Backend.database.Herramientas;
 import Backend.enums.TipoTarjeta;
 
 import java.util.Random;

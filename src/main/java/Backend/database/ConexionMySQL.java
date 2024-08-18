@@ -23,17 +23,6 @@ public class ConexionMySQL {
 
     private static Connection connection;
 
-//    public ConexionMySQL() {
-//        try {
-//            connection = DriverManager.getConnection(URL_MYSQL, USER, PASSWORD);
-//            System.out.println("Conexión exitosa");
-//            System.out.println("Esquema: " + connection.getSchema());
-//        } catch (SQLException ex) {
-//            System.out.println("Error al conectar con la base de datos");
-//            ex.printStackTrace();
-//        }
-//    }
-
     public static Connection conectar()  throws SQLException {
         try {
             connection = DriverManager.getConnection(URL_MYSQL, USER, PASSWORD);
@@ -44,4 +33,5 @@ public class ConexionMySQL {
             throw new SQLException("Error al conectar con la base de datos", ex);
         }
     }
+
 }

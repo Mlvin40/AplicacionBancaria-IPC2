@@ -1,5 +1,6 @@
 package Backend.solicitudes;
 
+import Backend.database.Herramientas;
 import Backend.enums.Estado;
 import Backend.enums.TipoTarjeta;
 

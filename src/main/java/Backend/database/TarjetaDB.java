@@ -11,7 +11,7 @@ import java.sql.Statement;
 
 public class TarjetaDB {
 
-    private Connection connection;
+    private static Connection connection;
 
     public TarjetaDB() {
         try {
@@ -21,7 +21,7 @@ public class TarjetaDB {
         }
     }
 
-    //Para la funionalidad de consultar la tarjeta
+    //Para la funcionalidad de consultar la tarjeta
     public String consultarTarjeta(String tarjeta) {
 
         StringBuilder sb = new StringBuilder();
@@ -68,6 +68,8 @@ public class TarjetaDB {
         }
     }
 
+
+    // Con este método se obtienen los datos de la solicitud para crear la tarjeta
     public Tarjeta obtenerDatosDesdeSolicitud(String numeroSolicitud) {
         String consulta = "SELECT tipo_tarjeta, nombre_solicitante, direccion, fecha, salario FROM solicitudes WHERE numero_solicitud = ?";
         try {
@@ -135,6 +137,24 @@ public class TarjetaDB {
             }
         } catch (SQLException e) {
             System.out.println("Error al cancelar la tarjeta: ");
+        }
+    }
+
+    public static double consultarLimite(String numeroTarjeta) {
+        String consulta = "SELECT limite FROM tarjetas WHERE numero_tarjeta = ?";
+        try {
+            PreparedStatement statementConsulta = connection.prepareStatement(consulta);
+            statementConsulta.setString(1, numeroTarjeta);
+            ResultSet resultSet = statementConsulta.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getDouble("limite");
+            } else {
+                System.out.println("Tarjeta no encontrada");
+                return 0.0;
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al consultar el límite de la tarjeta");
+            return 0.0;
         }
     }
 }

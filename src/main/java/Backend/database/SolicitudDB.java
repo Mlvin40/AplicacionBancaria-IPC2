@@ -1,13 +1,13 @@
 package Backend.database;
 
-import Backend.tarjetas.Tarjeta;
 import Backend.solicitudes.Solicitud;
 
 import java.sql.*;
+import java.time.LocalDate;
 
 public class SolicitudDB {
 
-    Connection connection;
+    private Connection connection;
 
     public SolicitudDB() {
         try {
@@ -19,7 +19,7 @@ public class SolicitudDB {
 
     public void crearSolicitud(Solicitud solicitud) {
         String insert = "INSERT INTO solicitudes (numero_solicitud, fecha, tipo_tarjeta, nombre_solicitante, salario, direccion) VALUES " +
-                "('" + solicitud.getNumeroSolicitud() + "', '" + formatoFecha(solicitud.getFecha()) + "', '" + solicitud.getTipo() + "', '" + solicitud.getNombreSolicitante() + "', " +
+                "('" + solicitud.getNumeroSolicitud() + "', '" + Herramientas.formatoFecha(solicitud.getFecha()) + "', '" + solicitud.getTipo() + "', '" + solicitud.getNombreSolicitante() + "', " +
                 solicitud.getSalario() + ", '" + solicitud.getDireccion() + "')";
 
         try {
@@ -32,11 +32,15 @@ public class SolicitudDB {
         }
     }
 
-    private void rechazarSolictud(String numeroSolicitud) {
-        String update = "UPDATE solicitudes SET estado = 'RECHAZADA' WHERE numero_solicitud = ?";
+    private void rechazarSolicitud(String numeroSolicitud) {
+
+        LocalDate fechaActual = LocalDate.now();
+        //Actualizar el estado y la fecha en la base de datos
+        String update = "UPDATE solicitudes SET estado = 'RECHAZADA', fecha = ? WHERE numero_solicitud = ?";
         try {
             PreparedStatement statementUpdate = connection.prepareStatement(update);
-            statementUpdate.setString(1, numeroSolicitud);
+            statementUpdate.setString(1, fechaActual.toString());
+            statementUpdate.setString(2, numeroSolicitud);
             int rowsAffected = statementUpdate.executeUpdate();
             System.out.println("Rows affected> " + rowsAffected);
             System.out.println("Solicitud rechazada");
@@ -46,16 +50,17 @@ public class SolicitudDB {
     }
 
     public boolean aprobarSolicitud(String numeroSolicitud) {
-
         if (!autorizarSolicitud(numeroSolicitud)) {
-            rechazarSolictud(numeroSolicitud);
+            rechazarSolicitud(numeroSolicitud);
             return false;
         }
+
+        // Obtener la fecha actual
+        LocalDate fechaActual = LocalDate.now();
 
         // Consulta para verificar si la solicitud existe y está pendiente
         String consulta = "SELECT COUNT(*) FROM solicitudes WHERE numero_solicitud = ? AND estado = 'PENDIENTE'";
         try {
-
             // Preparar la consulta
             PreparedStatement statementConsulta = connection.prepareStatement(consulta);
             statementConsulta.setString(1, numeroSolicitud);
@@ -63,10 +68,11 @@ public class SolicitudDB {
 
             // Verificar si la solicitud existe
             if (resultSet.next() && resultSet.getInt(1) > 0) {
-                // Si existe, actualizar el estado a AUTORIZADA
-                String update = "UPDATE solicitudes SET estado = 'AUTORIZADA' WHERE numero_solicitud = ?";
+                // Si existe, actualizar el estado a AUTORIZADA y la fecha a la fecha actual
+                String update = "UPDATE solicitudes SET estado = 'AUTORIZADA', fecha = ? WHERE numero_solicitud = ?";
                 PreparedStatement statementUpdate = connection.prepareStatement(update);
-                statementUpdate.setString(1, numeroSolicitud);
+                statementUpdate.setString(1, fechaActual.toString());  // Utilizar la fecha actual
+                statementUpdate.setString(2, numeroSolicitud);
                 int rowsAffected = statementUpdate.executeUpdate();
 
                 System.out.println("Rows affected> " + rowsAffected);
@@ -82,56 +88,48 @@ public class SolicitudDB {
             return false;
         }
     }
+        // Metodo para ver si se cumple con el minimo de salario y autorizar la solicitud
+        // Metodo de la clase SolicitudDB
+        private boolean autorizarSolicitud(String numeroSolicitud){
+            String query = "SELECT salario, tipo_tarjeta FROM solicitudes WHERE numero_solicitud = ?";
+            try (PreparedStatement statement = connection.prepareStatement(query)) {
+                statement.setString(1, numeroSolicitud);
+                ResultSet resultSet = statement.executeQuery();
 
-    // Metodo para ver si se cumple con el minimo de salario y autorizar la solicitud
-    // Metodo de la clase SolicitudDB
-    private boolean autorizarSolicitud(String numeroSolicitud) {
-        String query = "SELECT salario, tipo_tarjeta FROM solicitudes WHERE numero_solicitud = ?";
-        try (PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setString(1, numeroSolicitud);
-            ResultSet resultSet = statement.executeQuery();
+                if (resultSet.next()) {
+                    double salario = resultSet.getDouble("salario");
+                    String tipoTarjeta = resultSet.getString("tipo_tarjeta");
 
-            if (resultSet.next()) {
-                double salario = resultSet.getDouble("salario");
-                String tipoTarjeta = resultSet.getString("tipo_tarjeta");
-
-                double porcentajeSalario = salario * 0.60;
-                double limiteCredito;
-                switch (tipoTarjeta) {
-                    case "NACIONAL":
-                        limiteCredito = 5000;
-                        break;
-                    case "REGIONAL":
-                        limiteCredito = 10000;
-                        break;
-                    case "INTERNACIONAL":
-                        limiteCredito = 20000;
-                        break;
-                    default:
-                        throw new IllegalArgumentException("Tipo de tarjeta no válido");
-                }
-                if (porcentajeSalario >= limiteCredito) {
-                    //Como cumple con el minimo de salario, se autoriza la solicitud
-                    return true;
+                    double porcentajeSalario = salario * 0.60;
+                    double limiteCredito;
+                    switch (tipoTarjeta) {
+                        case "NACIONAL":
+                            limiteCredito = 5000;
+                            break;
+                        case "REGIONAL":
+                            limiteCredito = 10000;
+                            break;
+                        case "INTERNACIONAL":
+                            limiteCredito = 20000;
+                            break;
+                        default:
+                            throw new IllegalArgumentException("Tipo de tarjeta no válido");
+                    }
+                    if (porcentajeSalario >= limiteCredito) {
+                        //Como cumple con el minimo de salario, se autoriza la solicitud
+                        return true;
+                    } else {
+                        System.out.println("El 60% del salario no supera el límite de crédito del tipo de tarjeta.");
+                        return false;
+                    }
                 } else {
-                    System.out.println("El 60% del salario no supera el límite de crédito del tipo de tarjeta.");
+                    System.out.println("Solicitud no encontrada.");
                     return false;
                 }
-            } else {
-                System.out.println("Solicitud no encontrada.");
+            } catch (SQLException e) {
+                System.out.println("Error al autorizar la solicitud: " + e.getMessage());
                 return false;
             }
-        } catch (SQLException e) {
-            System.out.println("Error al autorizar la solicitud: " + e.getMessage());
-            return false;
         }
-    }
 
-    //Metodo para formatear la fecha a formato yyyy-MM-dd compatible con MySQL
-    private String formatoFecha(String fecha) {
-        fecha = fecha.trim();
-        String[] fechaArray = fecha.split("/");
-        String fechaFormateada = fechaArray[2] + "-" + fechaArray[1] + "-" + fechaArray[0];
-        return fechaFormateada;
     }
-}
