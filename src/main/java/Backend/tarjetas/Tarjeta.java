@@ -4,7 +4,6 @@
  */
 package Backend.tarjetas;
 
-import Backend.database.Herramientas;
 import Backend.enums.TipoTarjeta;
 
 import java.util.Random;
@@ -16,24 +15,47 @@ public class Tarjeta {
 
     private String numeroTarjeta;
     private TipoTarjeta tipoTarjeta;
-    private double Limite;
+    private double limite;
     private String nombreTitular;
     private String direccion;
     private String fechaSolicitud;
     private String numeroSolicitud; // para buscar una solicitud en el sistema
     private double salarioDuenio;
 
-    public Tarjeta(TipoTarjeta tipoTarjeta, double salarioDuenio, String nombreTitular, String direccion, String fechaSolicitud, String numeroSolicitud) {
+    private String estado;
 
+    public Tarjeta(TipoTarjeta tipoTarjeta, double salarioDuenio, String nombreTitular, String direccion, String fechaSolicitud, String numeroSolicitud) {
         this.tipoTarjeta = tipoTarjeta;
         this.salarioDuenio = salarioDuenio;
 
-        this.Limite = establecerLimite(salarioDuenio);
+        this.limite = establecerLimite(salarioDuenio);
         this.nombreTitular = nombreTitular;
         this.direccion = direccion;
         this.fechaSolicitud = fechaSolicitud;
         this.numeroTarjeta = generarNumeroTarjeta(tipoTarjeta);
         this.numeroSolicitud = numeroSolicitud;
+    }
+
+    /**
+     * Constructor para crear una tarjeta con un número de tarjeta específico, este sirve para los reportes
+     * @param numeroTarjeta
+     * @param tipoTarjeta
+     * @param limite
+     * @param nombreTitular
+     * @param direccion
+     * @param fechaSolicitud
+     * @param numeroSolicitud
+     * @param estado
+     */
+    public Tarjeta(String numeroTarjeta, TipoTarjeta tipoTarjeta, double limite, String nombreTitular, String direccion, String fechaSolicitud, String numeroSolicitud, String estado) {
+        this.numeroTarjeta = numeroTarjeta;
+        this.tipoTarjeta = tipoTarjeta;
+        this.limite = limite;
+        this.nombreTitular = nombreTitular;
+        this.direccion = direccion;
+        this.fechaSolicitud = fechaSolicitud;
+        this.numeroSolicitud = numeroSolicitud;
+        this.estado = estado;
     }
 
     private double establecerLimite(double salarioDuenio) {
@@ -79,7 +101,7 @@ public class Tarjeta {
     }
 
     public double getLimite() {
-        return Limite;
+        return limite;
     }
 
     public String getNombreTitular() {
@@ -96,5 +118,21 @@ public class Tarjeta {
 
     public String getNumeroSolicitud() {
         return numeroSolicitud;
+    }
+
+    public void setNumeroTarjeta(String numeroTarjeta) {
+        this.numeroTarjeta = numeroTarjeta;
+    }
+
+    public void setLimite(double limite) {
+        this.limite = limite;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }

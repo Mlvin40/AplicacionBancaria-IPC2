@@ -12,7 +12,7 @@ public class Solicitud {
     private String nombreSolicitante;
     private double salario;
     private String direccion;
-    //private Estado estado; //enum PENDIENTE, AUTORIZADA, RECHAZADA
+    private String estado;
 
     public Solicitud(String numeroSolicitud, String fecha, TipoTarjeta tipo, String nombreSolicitante, double salario, String direccion) { //constructor
         this.numeroSolicitud = numeroSolicitud;
@@ -21,6 +21,27 @@ public class Solicitud {
         this.nombreSolicitante = nombreSolicitante;
         this.salario = salario;
         this.direccion = direccion;
+    }
+
+    
+    /**
+     * Constructor para crear una solicitud con un estado específico, este sirve para los reportes
+     * @param numeroSolicitud
+     * @param fecha
+     * @param tipo
+     * @param nombreSolicitante
+     * @param salario
+     * @param direccion
+     * @param estado 
+     */
+    public Solicitud(String numeroSolicitud, String fecha, TipoTarjeta tipo, String nombreSolicitante, double salario, String direccion, String estado) { //constructor
+        this.numeroSolicitud = numeroSolicitud;
+        this.fecha = fecha;
+        this.tipo = tipo;
+        this.nombreSolicitante = nombreSolicitante;
+        this.salario = salario;
+        this.direccion = direccion;
+        this.estado = estado;
     }
 
     public String getNumeroSolicitud() {
@@ -46,4 +67,9 @@ public class Solicitud {
     public String getDireccion() {
         return direccion;
     }
+
+    public String getEstado() {
+        return estado;
+    }
+    
 }

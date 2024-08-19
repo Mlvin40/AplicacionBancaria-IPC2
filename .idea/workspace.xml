@@ -5,10 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea34483f-ef2a-4ad7-9e67-cb49ca253e98" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/reportes/ReporteHtml.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaConsultarTarjeta.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaConsultarTarjeta.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaConsultarTarjeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaConsultarTarjeta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/database/ValidarMovimientoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/database/ValidarMovimientoDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/solicitudes/Solicitud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/solicitudes/Solicitud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/tarjetas/Tarjeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/tarjetas/Tarjeta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaAutorizacionTarjeta.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/formularios/VentanaAutorizacionTarjeta.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaAutorizacionTarjeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/formularios/VentanaAutorizacionTarjeta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaCancelacionTarjeta.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/formularios/VentanaCancelacionTarjeta.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaCancelacionTarjeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/formularios/VentanaCancelacionTarjeta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaConsultarTarjeta.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/formularios/VentanaConsultarTarjeta.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaConsultarTarjeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/formularios/VentanaConsultarTarjeta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaMovimientoTarjeta.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/formularios/VentanaMovimientoTarjeta.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaMovimientoTarjeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/formularios/VentanaMovimientoTarjeta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaSolicitudTarjeta.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/formularios/VentanaSolicitudTarjeta.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaSolicitudTarjeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/formularios/VentanaSolicitudTarjeta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/VentanaPrincipal.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/VentanaPrincipal.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/VentanaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/VentanaPrincipal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
@@ -16,6 +28,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -25,6 +44,9 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2krtIObJP494hLMRWNK49mPPteQ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -33,8 +55,12 @@
   "keyToString": {
     "Application.AplicacionBancaria.executor": "Run",
     "Application.VentanaConsultarTarjeta.executor": "Run",
+    "Application.VentanaListaSolicitudes.executor": "Run",
+    "Application.VentanaListaTarjetas.executor": "Run",
+    "Application.VentanaPrincipal.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging main",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
+    "git-widget-placeholder": "generacion__reportes",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

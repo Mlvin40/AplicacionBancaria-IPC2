@@ -121,6 +121,7 @@ public class ValidarMovimientoDB {
         return montoTotal;
     }
 
+    //En este metodo se calcula el interes que se le va a cobrar a la persona
     public double generarInteres(String numeroTarjeta){
         double interes = InteresesTipo.establecerInteres(numeroTarjeta);
         double interesGenerado = montoTotal(numeroTarjeta) * interes;
