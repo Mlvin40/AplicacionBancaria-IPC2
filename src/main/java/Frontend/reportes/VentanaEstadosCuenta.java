@@ -7,10 +7,12 @@ package Frontend.reportes;
 import Backend.reportes.EstadoCuenta;
 import Backend.reportes.ListadoEstadosCuenta;
 
+import java.awt.GridLayout;
+
 import java.util.List;
+import javax.swing.JScrollPane;
 
 /**
- *
  * @author melvin
  */
 public class VentanaEstadosCuenta extends javax.swing.JFrame {
@@ -31,18 +33,11 @@ public class VentanaEstadosCuenta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        contenedorEstadosCT = new javax.swing.JScrollPane();
-        btnGenerarEstadosCuenta = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        panelBase = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        btnGenerarEstadosCuenta.setText("Generar");
-        btnGenerarEstadosCuenta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGenerarEstadosCuentaActionPerformed(evt);
-            }
-        });
 
         jButton1.setText("Regresar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -51,53 +46,89 @@ public class VentanaEstadosCuenta extends javax.swing.JFrame {
             }
         });
 
+        javax.swing.GroupLayout panelBaseLayout = new javax.swing.GroupLayout(panelBase);
+        panelBase.setLayout(panelBaseLayout);
+        panelBaseLayout.setHorizontalGroup(
+            panelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 680, Short.MAX_VALUE)
+        );
+        panelBaseLayout.setVerticalGroup(
+            panelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 467, Short.MAX_VALUE)
+        );
+
+        jButton2.setText("GenerarEstados");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(btnGenerarEstadosCuenta))
-                .addGap(49, 49, 49)
-                .addComponent(contenedorEstadosCT, javax.swing.GroupLayout.PREFERRED_SIZE, 711, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(81, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jButton2)))
+                .addGap(51, 51, 51)
+                .addComponent(panelBase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(35, 35, 35))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(171, 171, 171)
-                .addComponent(btnGenerarEstadosCuenta)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 296, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addContainerGap())
-            .addComponent(contenedorEstadosCT, javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(155, 155, 155)
+                        .addComponent(jButton2)
+                        .addGap(300, 300, 300)
+                        .addComponent(jButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(panelBase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(12, 12, 12))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGenerarEstadosCuentaActionPerformed(java.awt.event.ActionEvent evt) {
-        ListadoEstadosCuenta listadoEstadosCuenta = new ListadoEstadosCuenta();
-        List<EstadoCuenta> estadosCuenta = listadoEstadosCuenta.obtenerEstadosCuenta();
-
-        
-        for (EstadoCuenta estadoCuenta : estadosCuenta) {
-            PanelEstadoCuenta panelEstadoCuenta = new PanelEstadoCuenta();
-            panelEstadoCuenta.llenarCampos(estadoCuenta);
-            panelEstadoCuenta.setVisible(true);
-            contenedorEstadosCT.add(panelEstadoCuenta);    
-        }
-        
-        // Actualiza la vista
-        contenedorEstadosCT.revalidate();
-        contenedorEstadosCT.repaint();
 
     }
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // Obtén la lista de estados de cuenta
+        ListadoEstadosCuenta listadoEstadosCuenta = new ListadoEstadosCuenta();
+        List<EstadoCuenta> estadosCuenta = listadoEstadosCuenta.obtenerEstadosCuenta();
+
+        // Configura el layout del panelBase
+        panelBase.setLayout(new GridLayout(0, 1)); // Ajusta el número de columnas según tus necesidades
+        // Agrega un PanelEstadoCuenta para cada EstadoCuenta
+        for (EstadoCuenta estadoCuenta : estadosCuenta) {
+            PanelEstadoCuenta panelEstadoCuenta = new PanelEstadoCuenta();
+            panelEstadoCuenta.llenarCampos(estadoCuenta);
+            panelBase.add(panelEstadoCuenta);
+        }
+        System.out.println("Estados de cuenta generados: "+ estadosCuenta.size());
+        
+        PanelEstadoCuenta panelEstadoCuenta = new PanelEstadoCuenta();
+        panelBase.add(panelEstadoCuenta);
+        
+        JScrollPane scrollPane = new JScrollPane(panelBase);
+        this.add(scrollPane);
+        this.repaint();
+        this.revalidate();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -106,7 +137,7 @@ public class VentanaEstadosCuenta extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -135,8 +166,8 @@ public class VentanaEstadosCuenta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGenerarEstadosCuenta;
-    private javax.swing.JScrollPane contenedorEstadosCT;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JPanel panelBase;
     // End of variables declaration//GEN-END:variables
 }

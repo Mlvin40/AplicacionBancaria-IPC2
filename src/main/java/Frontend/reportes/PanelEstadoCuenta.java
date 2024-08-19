@@ -21,6 +21,7 @@ public class PanelEstadoCuenta extends javax.swing.JPanel {
      */
     public PanelEstadoCuenta() {
         initComponents();
+        setVisible(true);
     }
 
     //Con esto se recibe un objeto de tipo EstadoCuenta y se llenan los campos
@@ -31,12 +32,24 @@ public class PanelEstadoCuenta extends javax.swing.JPanel {
         txtInteres.setText(String.valueOf(estadoCuenta.getIntereses()));
         txtSaldoTotal.setText(String.valueOf(estadoCuenta.getSaldoTotal()));
         txtMontoTotal.setText(String.valueOf(estadoCuenta.getMontoTotal()));
+        txtDireccionCliente.setText(estadoCuenta.getDireccion());
         //Llenar la tabla de movimientos
         llenarTablaMovimientos(estadoCuenta.getMovimientosRealizados());
+        
+        //Revalidaciones del panel
+        revalidate();
+        repaint();
 
     }
 
     private void llenarTablaMovimientos(List<MovimientoTarjeta> movimientos){
+        // Asegúrate de que tablaMovimientos esté inicializada
+        if (tablaMovimientos == null) {
+            System.err.println("Error: tablaMovimientos no está inicializada.");
+            return;
+        }
+
+        // Crear el modelo de tabla
         DefaultTableModel modelo = new DefaultTableModel();
         modelo.addColumn("FECHA");
         modelo.addColumn("TIPO DE MOVIMIENTO");
@@ -44,15 +57,18 @@ public class PanelEstadoCuenta extends javax.swing.JPanel {
         modelo.addColumn("ESTABLECIMIENTO");
         modelo.addColumn("MONTO");
 
+        // Agregar las filas al modelo
         for (MovimientoTarjeta movimiento : movimientos) {
             Object[] fila = new Object[5];
-            fila[0] = movimiento.getFecha();
-            fila[1] = movimiento.getTipoMovimiento();
-            fila[2] = movimiento.getDescripcion();
-            fila[3] = movimiento.getEstablecimiento();
-            fila[4] = movimiento.getMonto();
+            fila[0] = movimiento.getFecha(); // Asegúrate de que getFecha() retorne un valor adecuado
+            fila[1] = movimiento.getTipoMovimiento(); // Asegúrate de que getTipoMovimiento() retorne un valor adecuado
+            fila[2] = movimiento.getDescripcion(); // Asegúrate de que getDescripcion() retorne un valor adecuado
+            fila[3] = movimiento.getEstablecimiento(); // Asegúrate de que getEstablecimiento() retorne un valor adecuado
+            fila[4] = movimiento.getMonto(); // Asegúrate de que getMonto() retorne un valor adecuado
             modelo.addRow(fila);
         }
+
+        // Establecer el modelo en la tabla
         tablaMovimientos.setModel(modelo);
     }
 
@@ -77,7 +93,7 @@ public class PanelEstadoCuenta extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         txtTipoTarjeta = new javax.swing.JLabel();
         txtMontoTotal = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        txtDireccionCliente = new javax.swing.JLabel();
         txtNombreCliente = new javax.swing.JLabel();
         txtNumeroTarjeta = new javax.swing.JLabel();
         txtInteres = new javax.swing.JLabel();
@@ -125,7 +141,7 @@ public class PanelEstadoCuenta extends javax.swing.JPanel {
 
         txtMontoTotal.setText(".");
 
-        jLabel11.setText(".");
+        txtDireccionCliente.setText(".");
 
         txtNombreCliente.setText(".");
 
@@ -158,7 +174,7 @@ public class PanelEstadoCuenta extends javax.swing.JPanel {
                                 .addGap(44, 44, 44)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtNombreCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtDireccionCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtTipoTarjeta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtNumeroTarjeta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
@@ -181,21 +197,18 @@ public class PanelEstadoCuenta extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtNumeroTarjeta))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(txtTipoTarjeta))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(txtNombreCliente)
-                        .addGap(9, 9, 9)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtNombreCliente, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(jLabel11))
+                    .addComponent(txtDireccionCliente))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24)
@@ -210,14 +223,13 @@ public class PanelEstadoCuenta extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(txtSaldoTotal))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -227,6 +239,7 @@ public class PanelEstadoCuenta extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tablaMovimientos;
+    private javax.swing.JLabel txtDireccionCliente;
     private javax.swing.JLabel txtInteres;
     private javax.swing.JLabel txtMontoTotal;
     private javax.swing.JLabel txtNombreCliente;

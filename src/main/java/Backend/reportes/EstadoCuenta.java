@@ -30,6 +30,7 @@ public class EstadoCuenta {
 
     public EstadoCuenta(String numeroTarjeta){
         this.numeroTarjeta = numeroTarjeta;
+        this.movimientosRealizados = new ArrayList<>();
         try {
             this.connection = ConexionMySQL.conectar();
         } catch (SQLException e) {
@@ -68,7 +69,6 @@ public class EstadoCuenta {
      */
     private void obtenerMovimientos() {
         // Obtener los movimientos de la tarjeta
-        this.movimientosRealizados = new ArrayList<>();
         String consulta = "SELECT numero_tarjeta, fecha, tipo_movimiento, descripcion, establecimiento, monto FROM movimientos WHERE numero_tarjeta = ?";
 
         try {

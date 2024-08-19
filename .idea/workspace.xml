@@ -9,8 +9,11 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/reportes/EstadoCuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/reportes/EstadoCuenta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/VentanaPrincipal.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/VentanaPrincipal.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/VentanaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/VentanaPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/reportes/PanelEstadoCuenta.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/reportes/PanelEstadoCuenta.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/reportes/PanelEstadoCuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/reportes/PanelEstadoCuenta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/reportes/VentanaEstadosCuenta.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/reportes/VentanaEstadosCuenta.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/reportes/VentanaEstadosCuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/reportes/VentanaEstadosCuenta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/aplicacionbancaria/AplicacionBancaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/aplicacionbancaria/AplicacionBancaria.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +52,7 @@
     "Application.VentanaPrincipal.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "false",
     "git-widget-placeholder": "generacion__reportes",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -62,6 +66,40 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="Application.AplicacionBancaria">
+    <configuration name="AplicacionBancaria" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mycompany.aplicacionbancaria.AplicacionBancaria" />
+      <module name="AplicacionBancaria" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mycompany.aplicacionbancaria.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VentanaEstadosCuenta" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Frontend.reportes.VentanaEstadosCuenta" />
+      <module name="AplicacionBancaria" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Frontend.reportes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AplicacionBancaria" />
+        <item itemvalue="Application.VentanaEstadosCuenta" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -84,5 +122,26 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Frontend/reportes/PanelEstadoCuenta.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Frontend/reportes/PanelEstadoCuenta.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/AplicacionBancaria$VentanaEstadosCuenta.ic" NAME="VentanaEstadosCuenta Coverage Results" MODIFIED="1724078551429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>Frontend.reportes.*</FILTER>
+    </SUITE>
   </component>
 </project>

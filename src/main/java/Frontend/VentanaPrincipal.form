@@ -27,7 +27,7 @@
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="jButton6" alignment="1" min="-2" pref="200" max="-2" attributes="0"/>
                   <Component id="jButton8" alignment="1" min="-2" pref="200" max="-2" attributes="0"/>
-                  <Component id="jButton7" alignment="1" min="-2" pref="200" max="-2" attributes="0"/>
+                  <Component id="btnEstadoDeCuenta" alignment="1" min="-2" pref="200" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="280" max="-2" attributes="0"/>
@@ -73,7 +73,7 @@
               <EmptySpace pref="55" max="32767" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jButton7" min="-2" max="-2" attributes="0"/>
+              <Component id="btnEstadoDeCuenta" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               <Component id="jButton8" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -134,12 +134,12 @@
         <Property name="text" type="java.lang.String" value="FORMULARIOS"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton7">
+    <Component class="javax.swing.JButton" name="btnEstadoDeCuenta">
       <Properties>
         <Property name="text" type="java.lang.String" value="Estado de cuenta"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEstadoDeCuentaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton8">
