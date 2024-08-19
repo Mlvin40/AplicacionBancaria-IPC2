@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="221177f8-20c6-4f62-b9e2-1f1122d3df0d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/database/ValidarMovimientoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/database/ValidarMovimientoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaMovimientoTarjeta.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaMovimientoTarjeta.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaMovimientoTarjeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaMovimientoTarjeta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/VentanaPrincipal.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/VentanaPrincipal.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/VentanaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/VentanaPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/aplicacionbancaria/AplicacionBancaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/aplicacionbancaria/AplicacionBancaria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/aplicacionbancaria/AplicacionBancaria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/aplicacionbancaria/AplicacionBancaria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaConsultarTarjeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaConsultarTarjeta.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +44,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "319",
-    "git-widget-placeholder": "frontend",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/melvin/Escritorio/Prueba de Repo/IPC2-2024/jdbc-java-2024-ipc2",
     "node.js.detected.package.eslint": "true",
