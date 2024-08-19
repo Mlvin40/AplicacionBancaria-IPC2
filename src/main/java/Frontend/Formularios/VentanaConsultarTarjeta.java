@@ -106,13 +106,9 @@ public class VentanaConsultarTarjeta extends javax.swing.JFrame {
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
         TarjetaDB tarjetaDB = new TarjetaDB();
-<<<<<<< HEAD
-
-=======
         //limpiar el area de la tarjeta
         txtDatosTarjeta.setText("");
-        
->>>>>>> frontend
+
         if (txtNumeroTarjeta.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingrese un número de tarjeta");
             return;
