@@ -4,6 +4,7 @@ Frontend/VentanaPrincipal$5.class
 Frontend/Formularios/VentanaCancelacionTarjeta$2.class
 Frontend/Formularios/VentanaMovimientoTarjeta$3.class
 Frontend/VentanaPrincipal$2.class
+Frontend/Formularios/VentanaConsultarTarjeta$3.class
 Backend/database/InteresesTipo.class
 Frontend/Formularios/VentanaSolicitudTarjeta.class
 com/mycompany/aplicacionbancaria/AplicacionBancaria.class
