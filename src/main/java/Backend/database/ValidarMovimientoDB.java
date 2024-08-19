@@ -54,6 +54,11 @@ public class ValidarMovimientoDB {
         double limite = TarjetaDB.consultarLimite(numeroTarjeta);
         double saldoactual = limite - montoTotal(numeroTarjeta);
 
+        //si es un abono debe devolver true
+        if (movimientoTarjeta.getTipoMovimiento().name().equals("ABONO")) {
+            return true;
+        }
+
         if (saldoactual >= movimientoTarjeta.getMonto()) {
             System.out.println("Tiene suficiente credito");
             return true;
@@ -109,7 +114,6 @@ public class ValidarMovimientoDB {
         double abonos = sumarAbonos(numeroTarjeta);
         double cargos = sumarCargos(numeroTarjeta);
         double montoTotal = cargos - abonos;
-
         //Significa que la deuda esta cancelada
         if (montoTotal < 0) {
             return 0.0;

@@ -6,12 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="221177f8-20c6-4f62-b9e2-1f1122d3df0d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/database/InteresesTipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/database/InteresesTipo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/database/MovimientoTarjetaDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/database/MovimientoTarjetaDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/database/SolicitudDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/database/SolicitudDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/database/TarjetaDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/database/TarjetaDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/database/ValidarMovimientoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/database/ValidarMovimientoDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaMovimientoTarjeta.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaMovimientoTarjeta.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaMovimientoTarjeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/Formularios/VentanaMovimientoTarjeta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/VentanaPrincipal.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/VentanaPrincipal.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/VentanaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/VentanaPrincipal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/aplicacionbancaria/AplicacionBancaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/aplicacionbancaria/AplicacionBancaria.java" afterDir="false" />
@@ -119,7 +116,7 @@
       <workItem from="1723941470700" duration="4836000" />
       <workItem from="1724011890605" duration="951000" />
       <workItem from="1724026627246" duration="3409000" />
-      <workItem from="1724030676488" duration="6531000" />
+      <workItem from="1724030676488" duration="12075000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,8 @@
 Frontend/Formularios/VentanaSolicitudTarjeta$4.class
+Frontend/VentanaPrincipal$7.class
 Frontend/VentanaPrincipal$5.class
+Frontend/Formularios/VentanaCancelacionTarjeta$2.class
+Frontend/Formularios/VentanaMovimientoTarjeta$3.class
 Frontend/VentanaPrincipal$2.class
 Backend/database/InteresesTipo.class
 Frontend/Formularios/VentanaSolicitudTarjeta.class
@@ -9,7 +12,11 @@ Frontend/VentanaPrincipal$4.class
 Backend/database/ConexionMySQL.class
 Frontend/Formularios/VentanaSolicitudTarjeta$3.class
 Frontend/Formularios/VentanaAutorizacionTarjeta$3.class
+Frontend/Formularios/VentanaCancelacionTarjeta$1.class
 Frontend/VentanaPrincipal.class
 Frontend/VentanaPrincipal$1.class
+Frontend/VentanaPrincipal$6.class
 Frontend/VentanaPrincipal$3.class
 Frontend/Formularios/VentanaSolicitudTarjeta$1.class
+Frontend/Formularios/VentanaCancelacionTarjeta.class
+Frontend/Formularios/VentanaCancelacionTarjeta$3.class

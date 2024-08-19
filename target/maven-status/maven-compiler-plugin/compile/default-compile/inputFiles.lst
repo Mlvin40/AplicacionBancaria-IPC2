@@ -1,7 +1,9 @@
+/home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Frontend/Formularios/VentanaConsultarTarjeta.java
 /home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/com/mycompany/aplicacionbancaria/AplicacionBancaria.java
 /home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Frontend/Formularios/VentanaSolicitudTarjeta.java
 /home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Backend/database/InteresesTipo.java
 /home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Backend/database/TarjetaDB.java
+/home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Frontend/Formularios/VentanaCancelacionTarjeta.java
 /home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Backend/database/SolicitudDB.java
 /home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Backend/enums/Estado.java
 /home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Backend/database/MovimientoTarjetaDB.java

@@ -5,6 +5,9 @@
 package Frontend;
 
 import Frontend.Formularios.VentanaAutorizacionTarjeta;
+import Frontend.Formularios.VentanaCancelacionTarjeta;
+import Frontend.Formularios.VentanaConsultarTarjeta;
+import Frontend.Formularios.VentanaMovimientoTarjeta;
 import Frontend.Formularios.VentanaSolicitudTarjeta;
 
 /**
@@ -53,6 +56,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         jButton3.setText("Consulta tarjeta");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Autorizacion de tarjetas");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -62,6 +70,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         jButton5.setText("Cancelacion de tarjetas");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("Reportes");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -112,7 +125,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        VentanaMovimientoTarjeta ventanaMovimientoTarjeta = new VentanaMovimientoTarjeta();
+        ventanaMovimientoTarjeta.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -123,6 +137,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         VentanaAutorizacionTarjeta ventanaAutorizacionTarjeta = new VentanaAutorizacionTarjeta();
         ventanaAutorizacionTarjeta.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        VentanaCancelacionTarjeta ventanaCancelacionTarjeta = new VentanaCancelacionTarjeta();
+        ventanaCancelacionTarjeta.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        VentanaConsultarTarjeta ventanaConsultarTarjeta = new VentanaConsultarTarjeta();
+        ventanaConsultarTarjeta.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
