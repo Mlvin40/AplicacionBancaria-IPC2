@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 public class InteresesTipo {
 
@@ -58,6 +59,7 @@ public class InteresesTipo {
                             break;
                     }
                 } else {
+                    JOptionPane.showMessageDialog(null, "Tarjeta no encontrada");
                     System.out.println("Tarjeta no encontrada");
                 }
             } catch (SQLException e) {

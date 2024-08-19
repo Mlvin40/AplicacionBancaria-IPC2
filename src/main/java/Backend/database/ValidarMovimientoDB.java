@@ -2,6 +2,7 @@ package Backend.database;
 
 import Backend.movimientos.MovimientoTarjeta;
 
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -32,14 +33,17 @@ public class ValidarMovimientoDB {
                     return true;
                 } else {
                     System.out.println("La tarjeta esta inactiva");
+                    JOptionPane.showMessageDialog(null, "La tarjeta esta inactiva");
                     return false;
                 }
             } else {
                 System.out.println("Tarjeta no encontrada");
+                JOptionPane.showMessageDialog(null, "Tarjeta no encontrada");
                 return false;
             }
         } catch (SQLException e) {
             System.out.println("Error al consultar la tarjeta: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al consultar la tarjeta");
             return false;
         }
     }
@@ -56,6 +60,7 @@ public class ValidarMovimientoDB {
         } else {
 
             System.out.println("No tiene suficiente credito");
+            JOptionPane.showMessageDialog(null, "No tiene suficiente credito");
             return false;
         }
     }

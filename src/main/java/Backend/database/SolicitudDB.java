@@ -2,6 +2,7 @@ package Backend.database;
 
 import Backend.solicitudes.Solicitud;
 
+import javax.swing.*;
 import java.sql.*;
 import java.time.LocalDate;
 
@@ -26,8 +27,10 @@ public class SolicitudDB {
             Statement statementInsert = connection.createStatement();
             int rowsAffected = statementInsert.executeUpdate(insert);
             System.out.println("Rows affected> " + rowsAffected);
+            JOptionPane.showMessageDialog(null, "Solicitud Registrada");
 
         } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al insertar en la base de datos");
             System.out.println("Error al insertar en la base de datos");
         }
     }
@@ -42,9 +45,11 @@ public class SolicitudDB {
             statementUpdate.setString(1, fechaActual.toString());
             statementUpdate.setString(2, numeroSolicitud);
             int rowsAffected = statementUpdate.executeUpdate();
-            System.out.println("Rows affected> " + rowsAffected);
+
             System.out.println("Solicitud rechazada");
+            //JOptionPane.showMessageDialog(null, "Solicitud rechazada");
         } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al rechazar la solicitud");
             System.out.println("Error al rechazar la solicitud: " + e.getMessage());
         }
     }
@@ -77,14 +82,18 @@ public class SolicitudDB {
 
                 System.out.println("Rows affected> " + rowsAffected);
                 System.out.println("Solicitud aprobada");
+                JOptionPane.showMessageDialog(null, "Solicitud aprobada");
+
                 return true;
             } else {
                 // Si no existe, retornar false
                 System.out.println("La solicitud no existe o no está pendiente");
+                JOptionPane.showMessageDialog(null, "La solicitud no existe o no está pendiente");
                 return false;
             }
         } catch (SQLException e) {
             System.out.println("Error al actualizar la solicitud: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al actualizar la solicitud");
             return false;
         }
     }
@@ -120,14 +129,17 @@ public class SolicitudDB {
                         return true;
                     } else {
                         System.out.println("El 60% del salario no supera el límite de crédito del tipo de tarjeta.");
+                        JOptionPane.showMessageDialog(null, "El 60% del salario no supera el límite de crédito del tipo de tarjeta.");
                         return false;
                     }
                 } else {
                     System.out.println("Solicitud no encontrada.");
+                    JOptionPane.showMessageDialog(null, "Solicitud no encontrada.");
                     return false;
                 }
             } catch (SQLException e) {
                 System.out.println("Error al autorizar la solicitud: " + e.getMessage());
+                JOptionPane.showMessageDialog(null, "Error al autorizar la solicitud.");
                 return false;
             }
         }

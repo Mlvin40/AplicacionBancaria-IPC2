@@ -9,6 +9,7 @@ import Backend.enums.TipoTarjeta;
 import Backend.movimientos.MovimientoTarjeta;
 import Backend.solicitudes.Solicitud;
 import Backend.tarjetas.Tarjeta;
+import Frontend.VentanaPrincipal;
 import com.sun.security.jgss.GSSUtil;
 
 import java.time.LocalDate;
@@ -19,10 +20,9 @@ import java.time.LocalDate;
 public class AplicacionBancaria {
 
     public static void main(String[] args) {
-
+        
         System.out.println("Hello World!");
         ConexionMySQL conexionMySQL = new ConexionMySQL();
-
         String numeroSolicitud = "15";
         //Pruebas de la base de datos
         Solicitud solicitud = new Solicitud(numeroSolicitud,
@@ -42,8 +42,10 @@ public class AplicacionBancaria {
             Tarjeta tarjeta = tarjetaDB.obtenerDatosDesdeSolicitud(numeroSolicitud);
             tarjetaDB.crearTarjeta(tarjeta);
         }
-
+        
         tarjetaDB.cancelarTarjeta("4256 3102 6563 3525");
+        //termina la cancelacion de tarjeta
+
         MovimientoTarjeta movimientoTarjeta = new MovimientoTarjeta(
                 "4256 3102 6562 2722",
                 "15/07/2024",
@@ -68,5 +70,10 @@ public class AplicacionBancaria {
                 1500.25);
 
         movimientoTarjetaDB.registrarMovimiento(movimientoTarjeta2);
+        
+        VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
+        
+        ventanaPrincipal.setVisible(true);
+        
     }
 }
