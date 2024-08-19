@@ -1,7 +1,6 @@
 package Backend.database;
 
 import Backend.movimientos.MovimientoTarjeta;
-import Backend.tarjetas.Intereses;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -111,5 +110,18 @@ public class ValidarMovimientoDB {
             return 0.0;
         }
         return montoTotal;
+    }
+
+    public double generarInteres(String numeroTarjeta){
+        double interes = InteresesTipo.establecerInteres(numeroTarjeta);
+        double interesGenerado = montoTotal(numeroTarjeta) * interes;
+        return interesGenerado;
+    }
+
+    //En este metodo se calcula lo que el usuario debe pagar por intereses
+    //Para quedar al corriente con su tarjeta este restultado debe de ser 0
+    //Para poder cancelar una tarjeta debe devolver 0, que esta al corriente con su tarjeta
+    public double establecerSaldoTotal(String numeroTarjeta) {
+        return montoTotal(numeroTarjeta) + generarInteres(numeroTarjeta);
     }
 }

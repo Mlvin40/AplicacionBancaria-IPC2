@@ -7,13 +7,11 @@
     <list default="true" id="221177f8-20c6-4f62-b9e2-1f1122d3df0d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/database/ConexionMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/database/ConexionMySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/database/SolicitudDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/database/SolicitudDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/database/TarjetaDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/database/TarjetaDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/solicitudes/Solicitud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/solicitudes/Solicitud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/tarjetas/Tarjeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/tarjetas/Tarjeta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/database/ValidarMovimientoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/database/ValidarMovimientoDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/movimientos/MovimientoTarjeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/movimientos/MovimientoTarjeta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/tarjetas/Intereses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/tarjetas/Intereses.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/aplicacionbancaria/AplicacionBancaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/aplicacionbancaria/AplicacionBancaria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Backend/database/ConexionMySQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Backend/database/ConexionMySQL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/aplicacionbancaria/AplicacionBancaria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/aplicacionbancaria/AplicacionBancaria.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +48,7 @@
   "keyToString": {
     "Application.AplicacionBancaria.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
     "git-widget-placeholder": "movimientos__tarjeta",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/melvin/Escritorio/Prueba de Repo/IPC2-2024/jdbc-java-2024-ipc2",
@@ -111,6 +110,8 @@
       <workItem from="1723701998444" duration="4199000" />
       <workItem from="1723871974147" duration="4758000" />
       <workItem from="1723941470700" duration="4836000" />
+      <workItem from="1724011890605" duration="951000" />
+      <workItem from="1724026627246" duration="3409000" />
     </task>
     <servers />
   </component>
@@ -133,7 +134,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/mycompany/aplicacionbancaria/AplicacionBancaria.java</url>
-          <line>54</line>
+          <line>55</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

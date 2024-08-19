@@ -123,6 +123,15 @@ public class TarjetaDB {
                     return;
                 }
 
+
+                //Si tiene un saldo pendiente no se puede cancelar
+                ValidarMovimientoDB validarMovimientoDB = new ValidarMovimientoDB();
+                double saldoTotal = validarMovimientoDB.establecerSaldoTotal(numeroTarjeta);
+                if (saldoTotal > 0) {
+                    System.out.println("No se puede cancelar la tarjeta, tiene un saldo pendiente de : " + saldoTotal);
+                    return;
+                }
+
                 // Preparar la actualización si el estado no es 'CANCELADO'
                 PreparedStatement statementUpdate = connection.prepareStatement(update);
                 statementUpdate.setString(1, numeroTarjeta);

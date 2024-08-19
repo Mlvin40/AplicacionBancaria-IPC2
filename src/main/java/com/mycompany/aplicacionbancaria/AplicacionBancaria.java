@@ -9,6 +9,7 @@ import Backend.enums.TipoTarjeta;
 import Backend.movimientos.MovimientoTarjeta;
 import Backend.solicitudes.Solicitud;
 import Backend.tarjetas.Tarjeta;
+import com.sun.security.jgss.GSSUtil;
 
 import java.time.LocalDate;
 
@@ -53,8 +54,19 @@ public class AplicacionBancaria {
 
         MovimientoTarjetaDB movimientoTarjetaDB = new MovimientoTarjetaDB();
         movimientoTarjetaDB.registrarMovimiento(movimientoTarjeta);
+        System.out.println();
+
         System.out.println("----------------------------------------");
 
 
+        MovimientoTarjeta movimientoTarjeta2 = new MovimientoTarjeta(
+                "4256 3102 6562 2722",
+                "15/07/2024",
+                TipoMovimiento.valueOf("CARGO"),
+                "Compra de zapatos",
+                "Zapatería el Zapato Feliz",
+                1500.25);
+
+        movimientoTarjetaDB.registrarMovimiento(movimientoTarjeta2);
     }
 }

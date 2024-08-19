@@ -1,15 +1,14 @@
-package Backend.tarjetas;
-
-import Backend.database.ConexionMySQL;
-import Backend.movimientos.MovimientoTarjeta;
+package Backend.database;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Intereses {
+public class InteresesTipo {
 
+
+    private static Connection connection;
 
     /**
      * Método para establecer el interés de una tarjeta
@@ -18,9 +17,14 @@ public class Intereses {
      * @param numeroTarjeta
      * @return
      */
-    public static double establecerInteres(String numeroTarjeta) throws SQLException {
+    public static double establecerInteres(String numeroTarjeta)  {
         {
-            Connection connection = ConexionMySQL.conectar();
+            try{
+                 connection = ConexionMySQL.conectar();
+            }
+            catch (SQLException e) {
+                System.out.println("Error al conectar a la base de datos: " + e.getMessage());
+            }
 
             String tipoTarjeta = null;
             double interes = 0.0;
@@ -62,5 +66,6 @@ public class Intereses {
             return interes;
         }
     }
+
 }
 

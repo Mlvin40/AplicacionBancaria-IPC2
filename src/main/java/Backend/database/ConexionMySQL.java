@@ -26,7 +26,7 @@ public class ConexionMySQL {
     public static Connection conectar()  throws SQLException {
         try {
             connection = DriverManager.getConnection(URL_MYSQL, USER, PASSWORD);
-            System.out.println("Conexión a la base de datos exitosa");
+          //System.out.println("Conexión a la base de datos exitosa");
             return connection;
         } catch (SQLException ex) {
             ex.printStackTrace();
