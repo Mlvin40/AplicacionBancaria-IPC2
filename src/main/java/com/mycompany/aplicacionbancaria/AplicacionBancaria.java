@@ -4,14 +4,7 @@
 package com.mycompany.aplicacionbancaria;
 
 import Backend.database.*;
-import Backend.enums.TipoMovimiento;
-import Backend.movimientos.MovimientoTarjeta;
-import Backend.reportes.EstadoCuenta;
 import Frontend.VentanaPrincipal;
-import Frontend.reportes.PanelEstadoCuenta;
-import java.awt.GridLayout;
-
-import javax.swing.*;
 
 /**
  * @author melvin
