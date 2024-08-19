@@ -2,6 +2,7 @@ package Backend.database;
 
 import Backend.movimientos.MovimientoTarjeta;
 
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -32,14 +33,17 @@ public class ValidarMovimientoDB {
                     return true;
                 } else {
                     System.out.println("La tarjeta esta inactiva");
+                    JOptionPane.showMessageDialog(null, "La tarjeta esta inactiva");
                     return false;
                 }
             } else {
                 System.out.println("Tarjeta no encontrada");
+                JOptionPane.showMessageDialog(null, "Tarjeta no encontrada");
                 return false;
             }
         } catch (SQLException e) {
             System.out.println("Error al consultar la tarjeta: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al consultar la tarjeta");
             return false;
         }
     }
@@ -50,12 +54,18 @@ public class ValidarMovimientoDB {
         double limite = TarjetaDB.consultarLimite(numeroTarjeta);
         double saldoactual = limite - montoTotal(numeroTarjeta);
 
+        //si es un abono debe devolver true
+        if (movimientoTarjeta.getTipoMovimiento().name().equals("ABONO")) {
+            return true;
+        }
+
         if (saldoactual >= movimientoTarjeta.getMonto()) {
             System.out.println("Tiene suficiente credito");
             return true;
         } else {
 
             System.out.println("No tiene suficiente credito");
+            JOptionPane.showMessageDialog(null, "No tiene suficiente credito");
             return false;
         }
     }
@@ -104,7 +114,6 @@ public class ValidarMovimientoDB {
         double abonos = sumarAbonos(numeroTarjeta);
         double cargos = sumarCargos(numeroTarjeta);
         double montoTotal = cargos - abonos;
-
         //Significa que la deuda esta cancelada
         if (montoTotal < 0) {
             return 0.0;

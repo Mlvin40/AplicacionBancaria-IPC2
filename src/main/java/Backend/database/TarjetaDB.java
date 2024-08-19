@@ -3,6 +3,7 @@ package Backend.database;
 import Backend.enums.TipoTarjeta;
 import Backend.tarjetas.Tarjeta;
 
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -62,9 +63,11 @@ public class TarjetaDB {
             Statement statementInsert = connection.createStatement();
             int rowsAffected = statementInsert.executeUpdate(insert);
             System.out.println("Tarjeta agregada");
+            JOptionPane.showMessageDialog(null, "Tarjeta agregada");
 
         } catch (SQLException e) {
             System.out.println("Error al insertar en la tabla tarjetas");
+            JOptionPane.showMessageDialog(null, "Error al insertar en la tabla tarjetas");
         }
     }
 
@@ -96,10 +99,12 @@ public class TarjetaDB {
             } else {
                 // Si no se encontró la solicitud, retorna null o lanza una excepción
                 System.out.println("Solicitud no encontrada");
+                JOptionPane.showMessageDialog(null, "Solicitud no encontrada");
                 return null;
             }
         } catch (SQLException e) {
             System.out.println("Error al obtener la solicitud: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al obtener la solicitud");
             return null;
         }
     }
@@ -120,6 +125,7 @@ public class TarjetaDB {
 
                 if ("CANCELADO".equals(estadoActual)) {
                     System.out.println("La tarjeta ya está cancelada.");
+                    JOptionPane.showMessageDialog(null, "La tarjeta ya está cancelada.");
                     return;
                 }
 
@@ -129,6 +135,7 @@ public class TarjetaDB {
                 double saldoTotal = validarMovimientoDB.establecerSaldoTotal(numeroTarjeta);
                 if (saldoTotal > 0) {
                     System.out.println("No se puede cancelar la tarjeta, tiene un saldo pendiente de : " + saldoTotal);
+                    JOptionPane.showMessageDialog(null, "No se puede cancelar la tarjeta, tiene un saldo pendiente de : " + saldoTotal);
                     return;
                 }
 
@@ -139,13 +146,16 @@ public class TarjetaDB {
 
                 if (rowsAffected > 0) {
                     System.out.println("Tarjeta cancelada exitosamente.");
+                    JOptionPane.showMessageDialog(null, "Tarjeta cancelada exitosamente.");
                 }
             } else {
                 // Si no se encuentra la tarjeta
                 System.out.println("Tarjeta no encontrada.");
+                JOptionPane.showMessageDialog(null, "Tarjeta no encontrada.");
             }
         } catch (SQLException e) {
             System.out.println("Error al cancelar la tarjeta: ");
+            JOptionPane.showMessageDialog(null, "Error al cancelar la tarjeta");
         }
     }
 

@@ -2,6 +2,7 @@ package Backend.database;
 
 import Backend.movimientos.MovimientoTarjeta;
 
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -37,11 +38,12 @@ public class MovimientoTarjetaDB {
         try {
             Statement statementInsert = connection.createStatement();
             int rowsAffected = statementInsert.executeUpdate(insert);
-            System.out.println("Rows affected> " + rowsAffected);
             System.out.println("Movimiento registrado");
+            JOptionPane.showMessageDialog(null, "Movimiento registrado");
 
         } catch (SQLException e) {
-            System.out.println("Error al agregar movimiento: ");
+            JOptionPane.showMessageDialog(null, "Error al agregar movimiento");
+            System.out.println("Error al agregar movimiento");
         }
     }
 }
