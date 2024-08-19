@@ -62,6 +62,10 @@ public class EstadoCuenta {
         }
     }
 
+
+    /**
+     * Con este metodo se obtienen todos los movimientos de la tarjeta
+     */
     private void obtenerMovimientos() {
         // Obtener los movimientos de la tarjeta
         this.movimientosRealizados = new ArrayList<>();
@@ -104,7 +108,6 @@ public class EstadoCuenta {
         obtenerMovimientos();
         calcularTotales();
     }
-
 
     public String getNumeroTarjeta() {
         return numeroTarjeta;

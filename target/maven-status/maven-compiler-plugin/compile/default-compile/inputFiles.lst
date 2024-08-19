@@ -9,6 +9,7 @@
 /home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Frontend/formularios/VentanaMovimientoTarjeta.java
 /home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Backend/reportes/ListadoTarjetas.java
 /home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Backend/database/ConexionMySQL.java
+/home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Frontend/reportes/PanelEstadoCuenta.java
 /home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Frontend/formularios/VentanaConsultarTarjeta.java
 /home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/com/mycompany/aplicacionbancaria/AplicacionBancaria.java
 /home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Frontend/formularios/VentanaCancelacionTarjeta.java
@@ -19,7 +20,10 @@
 /home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Backend/database/SolicitudDB.java
 /home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Backend/enums/Estado.java
 /home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Backend/database/Herramientas.java
+/home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Frontend/reportes/VentanaEstadosCuenta.java
 /home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Backend/database/ValidarMovimientoDB.java
+/home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Backend/reportes/EstadoCuenta.java
 /home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Backend/tarjetas/Tarjeta.java
+/home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Backend/reportes/ListadoEstadosCuenta.java
 /home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Frontend/formularios/VentanaAutorizacionTarjeta.java
 /home/melvin/NetBeansProjects/AplicacionBancaria/src/main/java/Frontend/VentanaPrincipal.java

@@ -6,6 +6,7 @@ Frontend/VentanaPrincipal$2.class
 Frontend/formularios/VentanaAutorizacionTarjeta.class
 Frontend/formularios/VentanaCancelacionTarjeta$2.class
 Frontend/reportes/VentanaListaSolicitudes$1.class
+Frontend/VentanaPrincipal$9.class
 Frontend/formularios/VentanaMovimientoTarjeta.class
 Backend/database/InteresesTipo.class
 Backend/reportes/ReporteHtml.class
@@ -37,3 +38,4 @@ Frontend/formularios/VentanaCancelacionTarjeta.class
 Frontend/formularios/VentanaAutorizacionTarjeta$2.class
 Frontend/VentanaPrincipal$6.class
 Frontend/VentanaPrincipal$3.class
+Frontend/reportes/VentanaEstadosCuenta$3.class
