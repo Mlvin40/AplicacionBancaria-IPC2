@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="221177f8-20c6-4f62-b9e2-1f1122d3df0d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/database/ConexionMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/database/ConexionMySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/database/TarjetaDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/database/TarjetaDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/database/ValidarMovimientoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/database/ValidarMovimientoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/movimientos/MovimientoTarjeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/movimientos/MovimientoTarjeta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/tarjetas/Intereses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/tarjetas/Intereses.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/aplicacionbancaria/AplicacionBancaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/aplicacionbancaria/AplicacionBancaria.java" afterDir="false" />
-    </list>
+    <list default="true" id="221177f8-20c6-4f62-b9e2-1f1122d3df0d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,7 +41,7 @@
     "Application.AplicacionBancaria.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
-    "git-widget-placeholder": "movimientos__tarjeta",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/melvin/Escritorio/Prueba de Repo/IPC2-2024/jdbc-java-2024-ipc2",
     "node.js.detected.package.eslint": "true",
