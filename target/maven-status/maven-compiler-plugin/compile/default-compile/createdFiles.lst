@@ -8,6 +8,7 @@ Frontend/Formularios/VentanaConsultarTarjeta$3.class
 Backend/database/InteresesTipo.class
 Frontend/Formularios/VentanaSolicitudTarjeta.class
 com/mycompany/aplicacionbancaria/AplicacionBancaria.class
+Backend/reportes/ReporteHtml.class
 Frontend/Formularios/VentanaSolicitudTarjeta$2.class
 Frontend/VentanaPrincipal$4.class
 Backend/database/ConexionMySQL.class
